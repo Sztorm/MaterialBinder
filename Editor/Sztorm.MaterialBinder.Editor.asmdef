@@ -1,0 +1,15 @@
+{
+    "name": "Sztorm.MaterialBinder.Editor",
+    "references": [
+        "GUID:c7945ec6ed409f846b5c53a2edb9413b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
