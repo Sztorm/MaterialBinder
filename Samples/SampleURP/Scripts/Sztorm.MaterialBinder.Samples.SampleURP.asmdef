@@ -1,11 +1,9 @@
 {
-    "name": "Sztorm.MaterialBinder.Editor",
+    "name": "Sztorm.MaterialBinder.Samples.SampleURP",
     "references": [
         "GUID:c7945ec6ed409f846b5c53a2edb9413b"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
