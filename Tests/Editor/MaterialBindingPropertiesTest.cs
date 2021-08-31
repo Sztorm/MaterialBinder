@@ -29,12 +29,29 @@ namespace Sztorm.MaterialBinder.Tests
             testedMaterialBindings.Unbind();
         }
 
-        private void TestVectorBinding(
+        private static void TestScalarBinding(
+            ScalarBinding binding,
+            (bool V0, float V1, int V2) values,
+            (bool V0, float V1, int V2) expected)
+        {
+            (bool V0, float V1, int V2) actual;
+            binding.Set(values.V0);
+            binding.Set(values.V1);
+            binding.Set(values.V2);
+            actual.V0 = binding.AsBool;
+            actual.V1 = binding.AsFloat;
+            actual.V2 = binding.AsInt;
+
+            Assert.AreEqual(expected.V0, actual.V0);
+            Assert.That(Mathf.Approximately(expected.V1, actual.V1));
+            Assert.AreEqual(expected.V2, actual.V2);
+        }
+
+        private static void TestVectorBinding(
             VectorBinding binding,
             (Vector2 V0, Vector3 V1, Vector4 V2, Color V3) values,
             (Vector2 V0, Vector3 V1, Vector4 V2, Color V3) expected)
-        {
-        
+        {  
             (Vector2 V0, Vector3 V1, Vector4 V2, Color V3) actual;
             binding.Set(values.V0);
             binding.Set(values.V1);
@@ -49,6 +66,38 @@ namespace Sztorm.MaterialBinder.Tests
             Assert.That(AreApproximatelyEqual(expected.V1, actual.V1));
             Assert.That(AreApproximatelyEqual(expected.V2, actual.V2));
             Assert.That(AreApproximatelyEqual(expected.V3, actual.V3));
+        }
+
+        [Test]
+        public void TestScalarBinding_Bool()
+        {
+            (bool V0, float V1, int V2) expected;
+            expected.V0 = true;
+            expected.V1 = 1F;
+            expected.V2 = 1;
+
+            (bool V0, float V1, int V2) values;
+            values.V0 = true;
+            values.V1 = 1F;
+            values.V2 = 1;
+
+            TestScalarBinding(testedMaterialBindings.Boolean, values, expected);
+        }
+
+        [Test]
+        public void TestScalarBinding_Float()
+        {
+            (bool V0, float V1, int V2) expected;
+            expected.V0 = true;
+            expected.V1 = 1F;
+            expected.V2 = 1;
+
+            (bool V0, float V1, int V2) values;
+            values.V0 = true;
+            values.V1 = 1F;
+            values.V2 = 1;
+
+            TestScalarBinding(testedMaterialBindings.Vector1, values, expected);
         }
 
         [Test]

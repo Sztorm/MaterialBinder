@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shaders:
   - {fileID: -6465566751694194690, guid: d2126864d1e0cd54385d2d21002604d1, type: 3}
-  relativeSavePath: Sample/Scripts/Generated
-  nameSpace: 
+  - {fileID: -6465566751694194690, guid: e1698fb2304c85e43a84c2b7798cd6d4, type: 3}
+  relativeSavePath: Samples/SampleURP/Scripts/Generated
+  nameSpace: Sztorm.MaterialBinder

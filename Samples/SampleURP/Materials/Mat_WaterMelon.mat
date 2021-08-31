@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_TestShader
+  m_Name: Mat_WaterMelon
   m_Shader: {fileID: -6465566751694194690, guid: d2126864d1e0cd54385d2d21002604d1,
     type: 3}
   m_ShaderKeywords: ENUM_CFD25221_A
