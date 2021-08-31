@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Sztorm.MaterialBinder
 {
@@ -16,5 +17,8 @@ namespace Sztorm.MaterialBinder
         public Texture AsTexture => material.GetTexture(propertyId);
 
         public void Set(Texture value) => material.SetTexture(propertyId, value);
+
+        public void Set(RenderTexture value, RenderTextureSubElement element)
+            => material.SetTexture(propertyId, value, element);
     }
 }
