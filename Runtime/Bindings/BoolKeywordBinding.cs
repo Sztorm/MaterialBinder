@@ -15,6 +15,8 @@ namespace Sztorm.MaterialBinder
 
         public bool IsEnabled => material.IsKeywordEnabled(keywordName);
 
+        public bool IsDisabled => !material.IsKeywordEnabled(keywordName);
+
         public void SetKeyword(bool value)
         {
             if (value)

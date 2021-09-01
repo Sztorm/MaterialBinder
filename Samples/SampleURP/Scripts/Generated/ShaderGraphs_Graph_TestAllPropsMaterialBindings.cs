@@ -6,18 +6,28 @@ namespace Sztorm.MaterialBinder
 {
     public struct ShaderGraphs_Graph_TestAllPropsMaterialBindings
     {
-        public enum EnumEnum : ulong
+        public enum EnumType
         {
             A,
             B,
-            C
+            C,
+            D,
+            E,
+            F,
+            G,
+            H
         }
         
         private static readonly string[] EnumKeywordNames =
         {
             "ENUM_8C69F9F6_A",
             "ENUM_8C69F9F6_B",
-            "ENUM_8C69F9F6_C"
+            "ENUM_8C69F9F6_C",
+            "ENUM_8C69F9F6_D",
+            "ENUM_8C69F9F6_E",
+            "ENUM_8C69F9F6_F",
+            "ENUM_8C69F9F6_G",
+            "ENUM_8C69F9F6_H"
         };
         
         public const string Vector1PropertyName = "Vector1_6ED8F763";
@@ -84,8 +94,8 @@ namespace Sztorm.MaterialBinder
         public BoolKeywordBinding BooleanKeyword
             => new BoolKeywordBinding(material, BooleanKeywordPropertyName);
         
-        public EnumKeywordBinding<EnumEnum> Enum
-            => new EnumKeywordBinding<EnumEnum>(material, EnumKeywordNames);
+        public EnumKeywordBinding<EnumType> Enum
+            => new EnumKeywordBinding<EnumType>(material, EnumKeywordNames);
         
         /// <summary>
         /// Binds material which contains Graph_TestAllProps.

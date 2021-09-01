@@ -19,20 +19,28 @@ namespace Sztorm.MaterialBinder
         public bool IsEnabled(T value)
             => material.IsKeywordEnabled(keywordNames[value.ToInt32(CultureInfo.InvariantCulture.NumberFormat)]);
 
-        public void SetKeyword(T keyword, bool value)
+        public bool IsDisabled(T value)
+            => !material.IsKeywordEnabled(keywordNames[value.ToInt32(CultureInfo.InvariantCulture.NumberFormat)]);
+
+        /// <summary>
+        /// Sets specified keyword and disables previously set keyword.
+        /// </summary>
+        /// <param name="keyword"></param>
+        public void SetKeyword(T keyword)
         {
-            if (value)
+            int keywordToIndex = keyword.ToInt32(CultureInfo.InvariantCulture.NumberFormat);
+
+            if (!material.IsKeywordEnabled(keywordNames[keywordToIndex]))
             {
-                EnableKeyword(keyword);
-                return;
+                material.EnableKeyword(keywordNames[keywordToIndex]);
             }
-            DisableKeyword(keyword);
+            for (int i = 0, length = keywordNames.Length; i < length; i++)
+            {
+                if (material.IsKeywordEnabled(keywordNames[i]) && i != keywordToIndex)
+                {
+                    material.DisableKeyword(keywordNames[i]);
+                }
+            }
         }
-
-        public void EnableKeyword(T keyword)
-            => material.EnableKeyword(keywordNames[keyword.ToInt32(CultureInfo.InvariantCulture.NumberFormat)]);
-
-        public void DisableKeyword(T keyword)
-            => material.DisableKeyword(keywordNames[keyword.ToInt32(CultureInfo.InvariantCulture.NumberFormat)]);
     }
 }

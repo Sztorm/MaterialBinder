@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using UnityEngine.Rendering;
 
 namespace Sztorm.MaterialBinder
 {
@@ -342,20 +341,19 @@ namespace Sztorm.MaterialBinder
         public static StringBuilder AppendKeywordPropertyEnum(
             this StringBuilder source, int indentLevel, in ShaderPropertyMetadata propertyMetadata)
         {
+            string[] memberNames = propertyMetadata.EnumMemberNames;
+            int lastIndex = memberNames.Length - 1;
             source.AppendIndent(indentLevel)
                 .Append("public enum ")
-                .Append(propertyMetadata.EnumName)
-                .AppendLine(" : ulong");
+                .AppendLine(propertyMetadata.EnumName);
             source.AppendIndent(indentLevel).AppendLine("{");
             indentLevel++;
-            string[] enumNames = propertyMetadata.EnumNames;
-            int lastIndex = enumNames.Length - 1;
 
             for (int i = 0; i < lastIndex; i++)
             {
-                source.AppendIndent(indentLevel).Append(enumNames[i]).AppendLine(",");
+                source.AppendIndent(indentLevel).Append(memberNames[i]).AppendLine(",");
             }
-            source.AppendIndent(indentLevel).AppendLine(enumNames[lastIndex]);
+            source.AppendIndent(indentLevel).AppendLine(memberNames[lastIndex]);
 
             indentLevel--;
             return source.AppendIndent(indentLevel).AppendLine("}");

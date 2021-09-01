@@ -25,7 +25,7 @@ namespace Sztorm.MaterialBinder
         public readonly string CSharpTypeName;
         public readonly string EnumName;
         public readonly string[] EnumKeywordNames;
-        public readonly string[] EnumNames;
+        public readonly string[] EnumMemberNames;
 
         public string BindingTypeName
         {
@@ -197,7 +197,7 @@ namespace Sztorm.MaterialBinder
         }
 
         private static string GetEnumName(string csharpDescription, KeywordType keywordType)
-            => keywordType != KeywordType.Enum ? null : csharpDescription + "Enum";
+            => keywordType != KeywordType.Enum ? null : csharpDescription + "Type";
 
         public ShaderPropertyMetadata(Shader shader, int propertyIndex)
         {
@@ -212,7 +212,7 @@ namespace Sztorm.MaterialBinder
             EnumName = GetEnumName(CSharpDescription, KeywordType);
             string[] enumSuffixes = GetEnumKeywordNameSuffixes(PropertyAttributes, KeywordType);
             EnumKeywordNames = GetEnumKeywordNames(enumSuffixes, Name, KeywordType);
-            EnumNames = GetEnumNames(enumSuffixes, KeywordType);
+            EnumMemberNames = GetEnumNames(enumSuffixes, KeywordType);
         }
     }
 }

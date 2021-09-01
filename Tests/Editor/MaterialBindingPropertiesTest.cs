@@ -9,6 +9,7 @@ namespace Sztorm.MaterialBinder.Tests
 {
     using static TestUtils;
     using TestedMatBindings = ShaderGraphs_Graph_TestAllPropsMaterialBindings;
+    using TestedKeywordEnum = ShaderGraphs_Graph_TestAllPropsMaterialBindings.EnumType;
 
     [TestFixture]
     public class MaterialBindingPropertiesTest
@@ -207,10 +208,38 @@ namespace Sztorm.MaterialBinder.Tests
         public void TestBoolKeywordBinding_DisableKeyword()
         {
             BoolKeywordBinding binding = testedMaterialBindings.BooleanKeyword;
-            bool expected = false;
+            bool expected = true;
 
             binding.DisableKeyword();
-            bool actual = binding.IsEnabled;
+            bool actual = binding.IsDisabled;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void TesEnumKeywordBinding_SetKeyword()
+        {
+            EnumKeywordBinding<TestedKeywordEnum> binding = testedMaterialBindings.Enum;
+            (bool A, bool B, bool C, bool D, bool E, bool F, bool G, bool H) expected;
+            expected.A = false;
+            expected.B = false;
+            expected.C = true;
+            expected.D = false;
+            expected.E = false;
+            expected.F = false;
+            expected.G = false;
+            expected.H = false;
+
+            binding.SetKeyword(TestedKeywordEnum.C);
+            (bool A, bool B, bool C, bool D, bool E, bool F, bool G, bool H) actual;
+            actual.A = binding.IsEnabled(TestedKeywordEnum.A);
+            actual.B = binding.IsEnabled(TestedKeywordEnum.B);
+            actual.C = binding.IsEnabled(TestedKeywordEnum.C);
+            actual.D = binding.IsEnabled(TestedKeywordEnum.D);
+            actual.E = !binding.IsDisabled(TestedKeywordEnum.E);
+            actual.F = !binding.IsDisabled(TestedKeywordEnum.F);
+            actual.G = !binding.IsDisabled(TestedKeywordEnum.G);
+            actual.H = !binding.IsDisabled(TestedKeywordEnum.H);
 
             Assert.AreEqual(expected, actual);
         }
