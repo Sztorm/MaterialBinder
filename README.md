@@ -4,10 +4,10 @@ process in Unity Engine.
 
  * [Documentation](Documentation/MaterialBinder.md)
  * [Changelog](CHANGELOG.md)
- * [Description](Description)
- * [Requirements](Requirements)
- * [Installation](Installation)
- * [License](LICENSE.md)
+ * [Description](#description)
+ * [Requirements](#requirements)
+ * [Installation](#installation)
+ * [License](#license)
 
 ## Description
 
@@ -35,12 +35,13 @@ There are many options of installation of this tool including:
 2. Download release unitypackage and import it to your project
 3. Download source files and drop them into to your project
 
-1.
+**Option #1**
+
  * Select **Window** -> **Windows** -> **Package Manager**
 
  ![](Images/Installation_01.png)
 
- * Press **+** button and then select **Add package from git URL...** option
+ * Press **+** button and then select **Add package from git URL...** option.
 
  ![](Images/Installation_02.png)
 
@@ -52,15 +53,17 @@ There are many options of installation of this tool including:
 
  ![](Images/Installation_04.png)
 
-2.
- * Download release unitypackage from the **Releases** section on GitHub (Select desired version)
+**Option #2**
+
+ * Download release unitypackage from the **Releases** section on GitHub (Select desired version).
  * Click **Assets** folder using RMB and then select **Import Package** -> **Custom Package...**
 
  ![](Images/Installation_05.png)
 
-3.
+**Option #3**
+
  * Download source files .zip archive from GitHub.
- * Unpack contents into folder of choice which is child of the **Assets** folder
+ * Unpack contents into folder of choice which is child of the **Assets** folder.
 
 ## License
 **MaterialBinder** is licensed under the MIT license. **MaterialBinder** is free for 
