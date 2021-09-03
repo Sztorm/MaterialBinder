@@ -1,6 +1,6 @@
 # MaterialBinder
-A code generation tool which simplifies and reduces errors associated with material binding 
-process in Unity Engine.
+A code generation tool made for Unity Engine which simplifies material binding process and reduces 
+errors associated with it.
 
  * [Documentation](Documentation/MaterialBinder.md)
  * [Changelog](CHANGELOG.md)
