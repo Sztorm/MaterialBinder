@@ -126,4 +126,16 @@ public void SetupMaterial()
 
 ### EnumKeywordBinding
 
-**EnumKeywordBinding**
+**EnumKeywordBinding** represents material keyword binding of a specified `enum` type.
+
+```csharp
+public SampleShaderMaterialBindings.QualityType quality = SampleShaderMaterialBindings.QualityType.High;
+
+public void SetupMaterial()
+{
+    if (sampleMatBindings.Quality.IsDisabled(quality))
+    {
+        sampleMatBindings.Quality.SetKeyword(quality);
+    }    
+}
+```

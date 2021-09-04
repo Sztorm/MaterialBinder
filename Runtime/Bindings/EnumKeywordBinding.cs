@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Sztorm.MaterialBinder
 {
+    /// <summary>
+    /// Represents material keyword binding of a specified <see langword="enum"/> type.
+    /// </summary>
     public readonly struct EnumKeywordBinding<T>
         where T : unmanaged, Enum, IConvertible
     {
@@ -16,14 +19,24 @@ namespace Sztorm.MaterialBinder
             this.keywordNames = keywordNames;
         }
 
+        /// <summary>
+        /// Returns value indicating whether specified keyword is enabled.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public bool IsEnabled(T value)
             => material.IsKeywordEnabled(keywordNames[value.ToInt32(CultureInfo.InvariantCulture.NumberFormat)]);
 
+        /// <summary>
+        /// Returns value indicating whether specified keyword is disabled.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public bool IsDisabled(T value)
             => !material.IsKeywordEnabled(keywordNames[value.ToInt32(CultureInfo.InvariantCulture.NumberFormat)]);
 
         /// <summary>
-        /// Sets specified keyword and disables previously set keyword.
+        /// Sets specified material keyword and disables previously set keyword.
         /// </summary>
         /// <param name="keyword"></param>
         public void SetKeyword(T keyword)
