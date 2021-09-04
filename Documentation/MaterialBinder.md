@@ -38,7 +38,7 @@ Binding wrong material will result in throwing an exception.
 
 ```csharp
 private SampleShaderMaterialBindings sampleMatBindings;
-public SampleMaterial sampleMaterial;
+public Material sampleMaterial;
 
 private void Awake()
 {
@@ -92,6 +92,29 @@ sampleMatBindings.TilingAndOffset.Set(tilingAndOffset);
 
 ### TextureBinding
 
+**TextureBinding** Represents material property binding of a texture type.
+
+```csharp
+public Texture albedoMap;
+public Texture normalMap;
+
+public void SetTextures()
+{
+    if (albedoMap != null)
+    {
+        sampleMatBindings.AlbedoMap.Set(albedoMap);
+    }
+    if (normalMap != null)
+    {
+        sampleMatBindings.NormalMap.Set(normalMap);
+    }
+}
+```
+
 ### BoolKeywordBinding
 
+**BoolKeywordBinding**
+
 ### EnumKeywordBinding
+
+**EnumKeywordBinding**
