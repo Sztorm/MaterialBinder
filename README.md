@@ -33,7 +33,7 @@ There are many options of installation of this tool including:
 
 1. Install MaterialBinder using Unity Package Manager (recommended)
 2. Download release unitypackage and import it to your project
-3. Download source files and drop them into to your project
+3. Download source files and drop them into your project
 
 **Option #1**
 
@@ -45,7 +45,7 @@ There are many options of installation of this tool including:
 
  ![](Images/Installation_02.png)
 
- * Paste `` https://github.com/Sztorm/MaterialBinder.git `` into text input and press **Add**
+ * Paste ` https://github.com/Sztorm/MaterialBinder.git ` into text input and press **Add**
 
  ![](Images/Installation_03.png)
 
