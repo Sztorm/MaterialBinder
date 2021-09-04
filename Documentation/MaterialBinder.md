@@ -113,7 +113,16 @@ public void SetTextures()
 
 ### BoolKeywordBinding
 
-**BoolKeywordBinding**
+**BoolKeywordBinding** represents material keyword binding of a `bool` type.
+
+```csharp
+public bool useComputeIntensivePath;
+
+public void SetupMaterial()
+{
+    sampleMatBindings.UseComputeIntensivePath.SetKeyword(useComputeIntensivePath);
+}
+```
 
 ### EnumKeywordBinding
 
