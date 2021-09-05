@@ -104,7 +104,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_98C98E97: {r: 1, g: 2, b: 3, a: 4}
+    - Color_98C98E97: {r: 1, g: 1, b: 1, a: 4}
     - Vector2_784B0007: {r: 1, g: 2, b: 3, a: 4}
     - Vector3_92521F1E: {r: 1, g: 2, b: 3, a: 4}
     - Vector4_809C1866: {r: 1, g: 2, b: 3, a: 4}
