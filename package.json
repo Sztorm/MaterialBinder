@@ -2,7 +2,7 @@
     "name": "com.sztorm.materialbinder",
     "version": "1.0.0",
     "displayName": "MaterialBinder",
-    "description": "Generate material bindings from referenced shaders. Modify shader properties of a material in a streamlined way, without error-prone string handling.",
+    "description": "Generate material binding scripts from referenced shaders. Modify shader properties of a material easily, without error-prone string handling.",
     "unity": "2019.4",
     "license": "MIT",
     "documentationUrl": "https://github.com/Sztorm/MaterialBinder/DOCUMENTATION.md",
@@ -10,14 +10,20 @@
     "licensesUrl": "https://github.com/Sztorm/MaterialBinder/LICENSE.md",
     "dependencies": {},
     "keywords": [
-       "Material",
-       "Shader",
-       "Binding",
-       "Generate"
-     ],
-     "author": {
-       "name": "Sztorm",
-       "url": "https://github.com/Sztorm"
-     }
+        "Material",
+        "Shader",
+        "Binding",
+        "Generate"
+    ],
+    "author": {
+      "name": "Sztorm",
+      "url": "https://github.com/Sztorm"
+    },
+    "samples": [{
+        "displayName": "Sample URP",
+        "description": "MaterialBinder sample realized in URP environment.",
+        "path": "Samples~/SampleURP"
+        }
+    ]
   }
   
