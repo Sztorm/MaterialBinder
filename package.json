@@ -22,7 +22,7 @@
     "samples": [{
         "displayName": "Sample URP",
         "description": "MaterialBinder sample realized in URP environment.",
-        "path": "Samples~/SampleURP"
+        "path": "Samples/SampleURP"
         }
     ]
   }
